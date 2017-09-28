@@ -7,7 +7,7 @@ int main(int argc, char *argv[]) {
     printf("hello\n");
 
     FILE *file;
-    fopen_s(&file, "map.ld", "rb");
+    file = fopen("data/map.ld", "rb");
 
     int num = 0;
     fread(&num, sizeof(int), 1, file);
