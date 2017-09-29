@@ -1,5 +1,8 @@
 CC = gcc
 FLAGS = -g
+LINK = -lsdl2
+INCLUDE = -I/usr/local/include/SDL2
+LIB = -L/usr/local/lib
 
 SOURCEDIR = src
 BUILDDIR = build
@@ -14,7 +17,7 @@ dir:
 	mkdir -p $(BUILDDIR)
 
 $(BUILDDIR)/$(EXECUTABLE): $(OBJECTS)
-	$(CC) $^ -o $@
+	$(CC) $(LINK) $(INCLUDE) $(LIB) $^ -o $@
 
 $(OBJECTS): $(BUILDDIR)/%.o : $(SOURCEDIR)/%.c
 	$(CC) $(FLAGS) $< -c -o $@
