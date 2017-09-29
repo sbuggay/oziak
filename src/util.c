@@ -5,7 +5,7 @@ struct rect_t {
     int height;
 };
 
-int collide(rect_t a, rect_t b) {
+int collide(struct rect_t a, struct rect_t b) {
     return (a.x < b.x + b.width &&
         a.x + a.width > b.x &&
         a.y < a.y + b.height &&

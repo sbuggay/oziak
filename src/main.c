@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "game.h"
 #include "level.h"
 
 int main(int argc, char *argv[]) {
@@ -21,6 +22,8 @@ int main(int argc, char *argv[]) {
     for(int i = 0; i < num; i++) {
         printf("[%d] %d,%d\n", objects[i].type, objects[i].x, objects[i].y);
     }
+
+    loop();
 
     free(objects);
     return 0;
